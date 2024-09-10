@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  pg:
+    image: bitnami/postgresql:13.16.0
+    container_name: pocket-js-server
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: inorbit
+    ports:
+      - 5433:5432
+    volumes:
+      - ./db:/var/lib/postgresql/data
